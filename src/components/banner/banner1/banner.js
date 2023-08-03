@@ -1,7 +1,7 @@
 import React from 'react';
 import BannerHorizontal from './bannerHorizontal';
 import BannerVertical from './bannerVertical';
-import {useOrientation} from '../../hooks/useOrientation';
+import {useOrientation} from '../../../hooks/useOrientation';
 
 const Banner = ({img1, img2, img3, video, text}) => {
   const orientation = useOrientation();

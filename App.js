@@ -1,6 +1,6 @@
 import React from 'react';
 import videoSample from './src/assets/video/video2.mp4';
-import Banner from './src/components/banner/banner';
+import Banner from './src/components/banner/banner1/banner';
 
 function App() {
   return (
