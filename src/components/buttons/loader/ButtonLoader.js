@@ -2,19 +2,21 @@ import React, {useState} from 'react';
 import {Animated, Easing, TouchableOpacity, View} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const ButtonLoader = ({onPress, containerStyles, width = 40}) => {
+const ButtonLoader = ({onPress, containerStyles, width = 40, isLoading}) => {
   const [rotateAnim] = useState(new Animated.Value(0));
   React.useEffect(() => {
-    Animated.loop(
-      Animated.timing(rotateAnim, {
-        toValue: 1,
-        duration: 1000,
-        easing: Easing.linear,
-        useNativeDriver: true,
-      }),
-    ).start();
+    if (isLoading) {
+      Animated.loop(
+        Animated.timing(rotateAnim, {
+          toValue: 1,
+          duration: 1000,
+          easing: Easing.linear,
+          useNativeDriver: true,
+        }),
+      ).start();
+    }
     // eslint-disable-next-line
-  }, []);
+  }, [isLoading]);
   const rotateInterpolate = rotateAnim.interpolate({
     inputRange: [0, 1],
     outputRange: ['0deg', '360deg'],

@@ -4,7 +4,8 @@ import Banner from './src/components/banner/banner4/bannerHorizontal';
 import ButtonLoader from './src/components/buttons/loader/ButtonLoader';
 
 function App() {
-  const isLoading = true;
+  const isLoading = false;
+  const showLoader = true;
   return (
     <Fragment>
       <Banner
@@ -22,10 +23,11 @@ function App() {
         }
         video={videoSample}
       />
-      {isLoading && (
+      {showLoader && (
         <ButtonLoader
           containerStyles={{position: 'absolute', right: 10, top: 10}}
           width={35}
+          isLoading={isLoading}
           onPress={() => console.log('consumo api')}
         />
       )}
